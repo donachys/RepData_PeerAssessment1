@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 
 ## Loading and preprocessing the data
@@ -16,7 +21,7 @@ step <- aggregate(formula=steps ~ date, data=data, FUN=sum)
 plot(step, type="h")
 ```
 
-![](./PA1_template_files/figure-html/hist-1.png) 
+![plot of chunk hist](figure/hist-1.png) 
 
 
 
@@ -44,7 +49,7 @@ step2 <- aggregate(formula=steps ~ interval, data=data, FUN=mean)
 plot(step2, type="l")  
 ```
 
-![](./PA1_template_files/figure-html/line-1.png) 
+![plot of chunk line](figure/line-1.png) 
 
 ```r
 maxAvgStepInterval = step2$interval[step2$steps==max(step2$steps)]
@@ -79,7 +84,7 @@ step2 <- aggregate(formula=steps ~ date, data=data2, FUN=sum)
 plot(step, type="h")
 ```
 
-![](./PA1_template_files/figure-html/hist2-1.png) 
+![plot of chunk hist2](figure/hist2-1.png) 
 
 ```r
 mean(step2$steps, na.rm=T)
@@ -112,9 +117,9 @@ step4 <- step3[step3$daytype=="weekday",]
 step5 <- step3[step3$daytype=="weekend",]
 
 par(mfrow=c(2,1))
-plot(step4$interval, step4$steps, type="l", xlab="interval", ylab="steps", sub="weekdays")
-plot(step5$interval, step5$steps, type="l", xlab="interval", ylab="steps", sub="weekends")
+plot(step4$interval, step4$steps, type="l", xlab="intervals", ylab="steps", sub="weekdays")
+plot(step5$interval, step5$steps, type="l", xlab="intervals", ylab="steps", sub="weekends")
 ```
 
-![](./PA1_template_files/figure-html/diffs2-1.png) 
+![plot of chunk diffs2](figure/diffs2-1.png) 
 
